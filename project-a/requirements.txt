@@ -1,0 +1,4 @@
+flask==2.2.5
+debugpy==1.6.7
+gunicorn==20.1.0
+watchdog==3.0.0

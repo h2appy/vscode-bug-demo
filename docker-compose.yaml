@@ -1,0 +1,23 @@
+version: 3.9.1
+
+services:
+  project-a:
+    build: project-a
+    ports:
+      - "5678:5678"
+      - "8000:8000"
+    volumes:
+      - ./project-a:/project-a
+    command: python -m debugpy --listen 0.0.0.0:5678 -m gunicorn project-a.app:app --bind 0.0.0.0:8000
+    # command: python -m debugpy --listen 0.0.0.0:5678 -m watchdog.watchmedo auto-restart -d=/project-a -p='*.py' --recursive -- python -m gunicorn project-a.app:app --bind 0.0.0.0:8000
+  project-b:
+    build: project-b
+    ports:
+      - "5679:5678"
+      - "8001:8000"
+    volumes:
+      - ./project-b:/project-b
+
+
+    command: python -m debugpy --listen 0.0.0.0:5678 -m gunicorn project-b.app:app --bind 0.0.0.0:8000
+    # command: python -m debugpy --listen 0.0.0.0:5678 -m watchdog.watchmedo auto-restart -d=/project-b -p='*.py' --recursive -- python -m gunicorn project-b.app:app --bind 0.0.0.0:8000
