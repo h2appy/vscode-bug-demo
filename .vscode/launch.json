@@ -17,7 +17,8 @@
         {
           "localRoot": "${workspaceFolder}/project-a",
           "remoteRoot": "."
-        }
+        },
+        { "localRoot": "${workspaceFolder}/project-b", "remoteRoot": "." }
       ],
       "justMyCode": true
     },
@@ -27,6 +28,10 @@
       "request": "attach",
       "connect": { "host": "localhost", "port": 5679 },
       "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}/project-a",
+          "remoteRoot": "."
+        },
         { "localRoot": "${workspaceFolder}/project-b", "remoteRoot": "." }
       ],
       "justMyCode": true
