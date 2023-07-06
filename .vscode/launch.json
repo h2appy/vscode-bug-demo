@@ -13,6 +13,9 @@
         "host": "localhost",
         "port": 5678
       },
+      // If we have multiple projects, we need to specify the path mappings
+      // for every project in the current configuration.
+      // I think that this way of handling is redundant and counterintuitive.
       "pathMappings": [
         {
           "localRoot": "${workspaceFolder}/project-a",
@@ -27,6 +30,9 @@
       "type": "python",
       "request": "attach",
       "connect": { "host": "localhost", "port": 5679 },
+      // If we have multiple projects, we need to specify the path mappings
+      // for every project in the current configuration.
+      // I think that this way of handling is redundant and counterintuitive.
       "pathMappings": [
         {
           "localRoot": "${workspaceFolder}/project-a",
